@@ -27,7 +27,7 @@ def gen_tutte(graph, start=1):
     """
     n = len(graph)
     indices = range(n)
-    mat = [([0.0] * n) for i in indices]
+    mat = [([0.0] * n) for _ in indices]
     for i, row in enumerate(graph, start=start):
         for j in row:
             ran = random.randint(1, n ** 2)
@@ -43,10 +43,9 @@ def has_perfect_match(graph, start=1):
     :param start: number of the first vertex in the graph (default = 1)
     :return: boolean
     """
-    tutte_mat = gen_tutte(graph, start=1)
+    tutte_mat = gen_tutte(graph, start=start)
     det = np.linalg.slogdet(tutte_mat)[0]  # slogdet prevents under and overflow
-    # return bool(det)
-    return False
+    return bool(det)
 
 
 if __name__ == "__main__":
