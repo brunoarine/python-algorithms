@@ -20,6 +20,7 @@ False
 import random
 import numpy as np
 
+
 def gen_tutte(graph, start=1):
     """
     Generates a Tutte matrix from an undirected, non-bipartite graph
@@ -33,6 +34,7 @@ def gen_tutte(graph, start=1):
             mat[i - start][j - start] = float(ran) if i < j else float(-ran)  # Python computes float faster than int
     return mat
 
+
 def has_perfect_match(graph, start=1):
     """
     Checke whether a graph has a perfect matching by instantiating its Tutte matrix variables with random values
@@ -43,7 +45,8 @@ def has_perfect_match(graph, start=1):
     """
     tutte_mat = gen_tutte(graph, start=1)
     det = np.linalg.slogdet(tutte_mat)[0]  # slogdet prevents under and overflow
-    return bool(det)
+    # return bool(det)
+    return False
 
 
 if __name__ == "__main__":
