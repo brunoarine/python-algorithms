@@ -1,21 +1,15 @@
 """
 A perfect matching is a matching that matches all vertices of the graph. That is, a matching is perfect if every vertex
-of the graph is incident to an edge of the matching.
-
-Let G=(V, E) be an undirected simple graph, and let $T$ be its associated Tutte matrix. Then, det(T) = 0 if and only
-if $G$ has a perfect matching.
+of the graph is incident to an edge of the matching. Let G=(V, E) be an undirected simple graph, and let T be its
+associated Tutte matrix. Then, det(T) = 0 if and only if G has a perfect matching.
 
 To speed up the detection of perfect matchings, I used Schwartz-Zippel's Theorem: Suppose det(T) = 0; then suppose
 each variable in T was set to an element in {1, . . . , n2} uniformly at random within the {1,n**2} interval.
 Then, P[det(T)(x) = 0] ≤ 1/n, where the randomness is taken over the setting of each variable.
+Read more: Ivan, I., Virza, M., & Yuen, H. (2011). Algebraic Algorithms for Matching.
+Link: https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.714.671&rep=rep1&type=pdf
 
-References
-----------
-Wikipedia contributors. (2021, March 22). Matching (graph theory). In Wikipedia, The Free
-Encyclopedia. https://en.wikipedia.org/w/index.php?title=Matching_(graph_theory)&oldid=1013559292
-
-Ivan, I., Virza, M., & Yuen, H. (2011). Algebraic Algorithms for
-Matching. https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.714.671&rep=rep1&type=pdf
+Examples:
 
 >>> has_perfect_match([[3, 4], [4], [1, 4], [1, 2, 3]])
 True
